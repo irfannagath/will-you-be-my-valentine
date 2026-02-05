@@ -63,9 +63,10 @@ const yes_button = document.getElementById('yes-button');
 let i = 1;
 let size = 50;
 let clicks = 0;
-window.onload = function() {
-    document.body.style.zoom = '90%';
-  };
+
+// Set default zoom level to 75%
+document.body.style.zoom = "0.80";
+
 
 // All images available for the collage background
 const collageImages = [
