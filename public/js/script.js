@@ -1,20 +1,19 @@
 const answers_no = {
     english: [
         "No",
-        "Are you sure?",
-        "Are you really sure??",
-        "Are you really realy sure???",
-        "Think again?",
-        "Don't believe in second chances?",
-        "Why are you being so cold?",
-        "Maybe we can talk about it?",
-        "I am not going to ask again!",
-        "Ok now this is hurting my feelings!",
-        "You are now just being mean!",
-        "Why are you doing this to me?",
-        "Please give me a chance!",
-        "I am begging you to stop!",
-        "Ok, Let's just start over.."
+        "ശെരിക്കും ???",
+        "ഒറപ്പാണോ ശുട്ടൂ 😭😭",
+        "onnuuuuuude onn aaloych nokkkikkee 😒",
+        "ഇനി ഇരുത്തി ഒന്ന് ആലോചിച്ചേ 🥱🫤",
+        "ഒരു zudio ടോപ് മേടിച്ചു തന്നാലോ ??? 👕👚",
+        "എന്താ കൊച്ചു മൈരേ ഇങ്ങനെ ....🫤🫤🫤",
+        "ഇത് laast aanee ഇനി ഞാൻ ചോതിക്കൂല്ല 😒",
+        "പിണക്കമാണോ  ??? 🙄",
+        "എന്നെ ഇഷ്ടവല്ലേ...🥲",
+        "ചക്കര ഉമ്മ  തന്നാലോ ??? 🐟",
+        "Fish Biriyani വാങ്ങിച്ചു തന്നാലോ ??? 🐟",
+        "ഓക്കേ വേണ്ടേ വേണ്ട. എന്നെ പോലെ ഒരു തങ്കക്കുടം ഇനി വേറെ കിട്ടില്ലേട്ടോ ... ",
+        "OK. ഇനി ഞാൻ ഒരു ശല്യം ആവില്ല ",
     ],
     french: [
         "Non",
@@ -64,8 +63,97 @@ const yes_button = document.getElementById('yes-button');
 let i = 1;
 let size = 50;
 let clicks = 0;
+window.onload = function() {
+    document.body.style.zoom = '90%';
+  };
+
+// All images available for the collage background
+const collageImages = [
+    "public/our-images/IMG_20240705_205648684.jpg",
+    "public/our-images/IMG_20240722_002328449_HDR.jpg",
+    "public/our-images/IMG_20240815_112533484_HDR.jpg",
+    "public/our-images/IMG_20240818_105258781_HDR.jpg",
+    "public/our-images/IMG_20240818_105311298_HDR.jpg",
+    "public/our-images/IMG_20240910_221152563_HDR.jpg",
+    "public/our-images/IMG_20240914_115028133_HDR.jpg",
+    "public/our-images/IMG_20241019_091235635_HDR.jpg",
+    "public/our-images/IMG_20241022_222318469.jpg",
+    "public/our-images/IMG_20241025_233555071_HDR.jpg",
+    "public/our-images/IMG_20241025_233606619_HDR.jpg",
+    "public/our-images/IMG_20241026_105015906_HDR.jpg",
+    "public/our-images/IMG_20241031_235241774_HDR.jpg",
+    "public/our-images/IMG_20241115_082930189_HDR.jpg",
+    "public/our-images/IMG_20250110_024311057.jpg",
+    "public/our-images/IMG_20250120_232311473_HDR.jpg",
+    "public/our-images/IMG_20250206_104516322_HDR.jpg",
+    "public/our-images/IMG_20250304_213257029_HDR.jpg",
+    "public/our-images/IMG_20260103_142605367_HDR.jpg",
+    "public/our-images/IMG_20260117_150610759.jpg",
+    "public/our-images/IMG_20260117_150707251_HDR.jpg",
+    "public/our-images/IMG_20260124_134425335_HDR.jpg",
+    "public/our-images/IMG_20260124_164554508_HDR.jpg",
+    "public/our-images/IMG-20240720-WA0048.jpg",
+    "public/our-images/IMG-20240722-WA0056.jpg",
+    "public/our-images/IMG-20240808-WA0000.jpg",
+    "public/our-images/IMG-20240808-WA0002.jpg",
+    "public/our-images/IMG-20240810-WA0006.jpg",
+    "public/our-images/IMG-20240905-WA0016.jpg",
+    "public/our-images/IMG-20240928-WA0021.jpg",
+    "public/our-images/IMG-20241021-WA0025.jpg"
+];
+
+function updateCollageBackground(options = {}) {
+    const rows = options.rows || 2; // default 3 rows
+    const cols = options.cols || 8; // default 6 columns
+    const images = options.images || collageImages;
+    const neededTiles = rows * cols;
+
+    let collage = document.getElementById("collage-background");
+    if (!collage) {
+        collage = document.createElement("div");
+        collage.id = "collage-background";
+        document.body.prepend(collage);
+    }
+
+    // Clear previous collage
+    collage.innerHTML = "";
+
+    if (!images.length) return;
+
+    // Adjust grid size based on requested rows/cols
+    collage.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+    collage.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+
+    // Create a shuffled copy of the images
+    const shuffled = [...images].sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, Math.min(neededTiles, shuffled.length));
+
+    // If there are fewer than neededTiles images, repeat some
+    while (selected.length < neededTiles) {
+        selected.push(
+            images[Math.floor(Math.random() * images.length)]
+        );
+    }
+
+    selected.forEach((src) => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = "Collage image";
+        collage.appendChild(img);
+    });
+}
+
+// Initial load: show a 18 * 4 grid of the specific image
+updateCollageBackground({
+    rows: 4,
+    cols: 18,
+    images: ["public/our-images/IMG_20260124_134425335_HDR.jpg"]
+});
 
 no_button.addEventListener('click', () => {
+    // Update randomized collage background on every click
+    updateCollageBackground();
+
     // Change banner source
     let banner = document.getElementById('banner');
     if (clicks === 0) {
@@ -96,6 +184,9 @@ no_button.addEventListener('click', () => {
 });
 
 yes_button.addEventListener('click', () => {
+    // Update randomized collage background on every click
+    updateCollageBackground();
+
     // change banner gif path
     let banner = document.getElementById('banner');
     banner.src = "public/images/yes.gif";

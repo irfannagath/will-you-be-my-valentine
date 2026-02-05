@@ -7,6 +7,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
 
 .buttons {
@@ -63,6 +65,25 @@ body {
     margin-top: 20px;
     padding: 20px;
     text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+#collage-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    opacity: 0.4; /* 40% opacity */
+}
+
+#collage-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .message {
