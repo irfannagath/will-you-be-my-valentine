@@ -70,38 +70,15 @@ document.body.style.zoom = "0.80";
 
 // All images available for the collage background
 const collageImages = [
-    "public/our-images/IMG_20240705_205648684.jpg",
-    "public/our-images/IMG_20240722_002328449_HDR.jpg",
-    "public/our-images/IMG_20240815_112533484_HDR.jpg",
-    "public/our-images/IMG_20240818_105258781_HDR.jpg",
-    "public/our-images/IMG_20240818_105311298_HDR.jpg",
-    "public/our-images/IMG_20240910_221152563_HDR.jpg",
-    "public/our-images/IMG_20240914_115028133_HDR.jpg",
-    "public/our-images/IMG_20241019_091235635_HDR.jpg",
-    "public/our-images/IMG_20241022_222318469.jpg",
-    "public/our-images/IMG_20241025_233555071_HDR.jpg",
-    "public/our-images/IMG_20241025_233606619_HDR.jpg",
-    "public/our-images/IMG_20241026_105015906_HDR.jpg",
-    "public/our-images/IMG_20241031_235241774_HDR.jpg",
-    "public/our-images/IMG_20241115_082930189_HDR.jpg",
-    "public/our-images/IMG_20250110_024311057.jpg",
-    "public/our-images/IMG_20250120_232311473_HDR.jpg",
-    "public/our-images/IMG_20250206_104516322_HDR.jpg",
-    "public/our-images/IMG_20250304_213257029_HDR.jpg",
-    "public/our-images/IMG_20260103_142605367_HDR.jpg",
-    "public/our-images/IMG_20260117_150610759.jpg",
-    "public/our-images/IMG_20260117_150707251_HDR.jpg",
-    "public/our-images/IMG_20260124_134425335_HDR.jpg",
-    "public/our-images/IMG_20260124_164554508_HDR.jpg",
-    "public/our-images/IMG-20240720-WA0048.jpg",
-    "public/our-images/IMG-20240722-WA0056.jpg",
-    "public/our-images/IMG-20240808-WA0000.jpg",
-    "public/our-images/IMG-20240808-WA0002.jpg",
-    "public/our-images/IMG-20240810-WA0006.jpg",
-    "public/our-images/IMG-20240905-WA0016.jpg",
-    "public/our-images/IMG-20240928-WA0021.jpg",
-    "public/our-images/IMG-20241021-WA0025.jpg"
-];
+    "public/our-images/404dc6cbca7680db1de48f29ceaf7265.jpg",
+    "public/our-images/images (3).jpg",
+    "public/our-images/images (4).jpg",
+    "public/our-images/images (5).jpg",
+    "public/our-images/images (6).jpg",
+    "public/our-images/images (7).jpg",
+    "public/our-images/two-cats-nuzzling-each-other-affectionately-displaying-closeness-and-warmth-free-photo.jpg",
+    "public/our-images/will-you-be-my-valentine.jpg",
+]
 
 function updateCollageBackground(options = {}) {
     const rows = options.rows || 2; // default 3 rows
@@ -148,7 +125,7 @@ function updateCollageBackground(options = {}) {
 updateCollageBackground({
     rows: 4,
     cols: 18,
-    images: ["public/our-images/IMG_20260124_134425335_HDR.jpg"]
+    images: ["public/our-images/will-you-be-my-valentine.jpg"]
 });
 
 no_button.addEventListener('click', () => {
